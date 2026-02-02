@@ -33,11 +33,16 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - run: npm ci
-      - run: npm run test:unit
-      - run: npm run build
+      - name: Install Playwright with Chrome
+        run: npx playwright install chromium --with-deps
+      - name: Run tests
+        run: npm run test:unit
+      - name: Build App
+        run: npm run build
         env:
           APP_BASE_URL: /vue-base-project/
-      - run: npm run build-storybook
+      - name: Build storybook
+        run: npm run build-storybook
       - run: mv ./storybook-static ./dist/storybook
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
