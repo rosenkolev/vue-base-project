@@ -1,5 +1,14 @@
+import { setup } from '@storybook/vue3'
 import type { Preview } from '@storybook/vue3-vite'
-import { setTheme, themes } from '@/composables/withTheme'
+
+import PrimeVue from 'primevue/config'
+
+import { setDarkMode, primeVueOptions } from '@/theme'
+
+// Setup PrimeVue
+setup((app) => {
+  app.use(PrimeVue, primeVueOptions)
+})
 
 const preview: Preview = {
   parameters: {
@@ -23,7 +32,8 @@ const preview: Preview = {
   decorators: [
     (story, context) => {
       const backgroundName: string = context.globals?.backgrounds?.value
-      setTheme(themes[backgroundName.toLowerCase()])
+      const isDark = backgroundName === 'dark'
+      setDarkMode(isDark)
       return {
         components: { story },
         template: '<story />',

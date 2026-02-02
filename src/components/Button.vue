@@ -21,7 +21,7 @@ const props = withDefaults(
      */
     size?: 'small' | 'medium' | 'large'
   }>(),
-  { primary: false },
+  { primary: true },
 )
 
 const emit = defineEmits<{
@@ -51,13 +51,12 @@ const onClick = () => {
   font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 .storybook-button--primary {
-  background-color: #555ab9;
-  color: white;
+  background-color: var(--st-emerald-500);
+  color: var(--st-emerald-0);
 }
 .storybook-button--secondary {
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;
-  background-color: transparent;
-  color: #333;
+  background-color: var(--st-orange-500);
+  color: var(--st-orange-0);
 }
 .storybook-button--small {
   padding: 10px 16px;

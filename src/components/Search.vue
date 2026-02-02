@@ -20,7 +20,6 @@
 
 <script setup lang="ts">
 import { computed } from 'vue'
-import { withTheme } from '@/composables/withTheme'
 import { vOnKey, vOnKeyDelay } from '@/directives/onKey'
 
 import type { SearchItem } from './Search.model'
@@ -36,7 +35,6 @@ const emit = defineEmits<{
   (e: 'select', item: SearchItem): void
 }>()
 
-const { theme } = withTheme()
 const hasItems = computed(() => props.items && props.items.length > 0)
 const on = {
   search: (value: string) => emit('search', value),
@@ -57,13 +55,14 @@ const on = {
   outline: none;
   font-size: 14px;
 
-  background-color: v-bind('theme.primary.backgroundColor');
-  color: v-bind('theme.primary.textColor');
-  border: 1px solid v-bind('theme.primary.borderColor');
+  background-color: var(--st-form-field-background);
+  color: var(--st-form-field-color);
+  border: 1px solid var(--st-form-field-border-color);
+  box-shadow: var(--st-form-field-shadow);
 }
 
-.search-input:focus {
-  border-color: v-bind('theme.primary.borderFocusColor');
+.search-input:hover {
+  border-color: var(--st-form-field-hover-border-focus);
 }
 
 .search-results {
@@ -72,8 +71,8 @@ const on = {
   left: 0;
   right: 0;
 
-  background-color: #fff;
-  border: 1px solid v-bind('theme.primary.borderColor');
+  background-color: var(--st-content-background);
+  border: 1px solid var(--st-content-border-color);
   border-radius: 6px;
 
   list-style: none;
@@ -85,11 +84,10 @@ const on = {
 .search-item {
   padding: 0.5rem 0.75rem;
   cursor: pointer;
-  color: v-bind('theme.primary.textColor');
+  color: var(--st-text-color);
 }
 
 .search-item:hover {
-  background-color: v-bind('theme.primary.borderFocusColor');
-  color: #fff;
+  background-color: var(--st-highlight-background);
 }
 </style>

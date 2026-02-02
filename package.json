@@ -10,7 +10,7 @@
     "dev": "vite",
     "build": "run-p type-check \"build-only {@}\" --",
     "preview": "vite preview",
-    "test:unit": "vitest",
+    "test:unit": "vitest run",
     "build-only": "vite build",
     "type-check": "vue-tsc --build",
     "lint": "eslint . --fix --cache",
@@ -19,6 +19,8 @@
     "build-storybook": "cross-env STORYBOOK=true storybook build"
   },
   "dependencies": {
+    "@primeuix/themes": "^2.0.3",
+    "primevue": "^4.5.4",
     "vue": "^3.5.26"
   },
   "devDependencies": {

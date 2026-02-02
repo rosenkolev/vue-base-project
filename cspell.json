@@ -1,0 +1,24 @@
+{
+  "version": "0.2",
+  "language": "en",
+  "dictionaries": [
+    "typescript",
+    "node",
+    "html",
+    "css",
+    "vue"
+  ],
+  "ignorePaths": [
+    "node_modules/**",
+    "dist/**",
+    "build/**",
+    "coverage/**",
+    "package-lock.json"
+  ],
+  "words": [
+    "vite",
+    "primeuix",
+    "primevue",
+    "sminted"
+  ]
+}
