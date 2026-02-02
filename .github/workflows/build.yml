@@ -33,8 +33,12 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - run: npm ci
+      - name: Run linting
+        run: npm run lint
+      - name: Run spellchecker
+        run: npx -y cspell .
       - name: Install Playwright with Chrome
-        run: npx playwright install chromium --with-deps
+        run: npx playwright install chromium --with-deps --only-shell
       - name: Run tests
         run: npm run test:unit
       - name: Build App

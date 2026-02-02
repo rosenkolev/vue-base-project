@@ -2,7 +2,7 @@ import type { PrimeVueConfiguration } from 'primevue/config'
 import Aura from '@primeuix/themes/aura'
 
 export function setDarkMode(enable: boolean): void {
-  document.documentElement.classList.toggle('sminted-dark', enable)
+  document.documentElement.classList.toggle('app-dark', enable)
 }
 
 export const primeVueOptions: PrimeVueConfiguration = {
@@ -10,7 +10,7 @@ export const primeVueOptions: PrimeVueConfiguration = {
     preset: Aura,
     options: {
       prefix: 'st',
-      darkModeSelector: '.sminted-dark',
+      darkModeSelector: '.app-dark',
       cssLayer: false,
     },
   },

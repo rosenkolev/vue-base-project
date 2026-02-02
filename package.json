@@ -13,7 +13,7 @@
     "test:unit": "vitest run",
     "build-only": "vite build",
     "type-check": "vue-tsc --build",
-    "lint": "eslint . --fix --cache",
+    "lint": "eslint . --cache",
     "format": "prettier --write --experimental-cli src/",
     "storybook": "cross-env STORYBOOK=true storybook dev -p 6006",
     "build-storybook": "cross-env STORYBOOK=true storybook build"

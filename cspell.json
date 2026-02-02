@@ -8,6 +8,14 @@
     "css",
     "vue"
   ],
+  "overrides": [
+    {
+      "filename": "*.stories.ts",
+      "words": [
+        "autodocs"
+      ]
+    }
+  ],
   "ignorePaths": [
     "node_modules/**",
     "dist/**",
@@ -16,9 +24,10 @@
     "package-lock.json"
   ],
   "words": [
+    "autodocs",
+    "testid",
     "vite",
     "primeuix",
-    "primevue",
-    "sminted"
+    "primevue"
   ]
 }
